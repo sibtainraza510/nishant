@@ -9,7 +9,7 @@
 </head>
 <body class="login-body">
       
-      <form method="POST" action="app/login.php" class="shadow p-4">
+      <form method="POST" action="app/login.php" class="shadow p-4" autocomplete="off">
 
       	  <h3 class="display-4">LOGIN</h3>
       	  <?php if (isset($_GET['error'])) {?>
@@ -24,20 +24,21 @@
 			</div>
       	  <?php } 
 
-                // $pass = "123";
+                // $pass = "admin123";
                 // $pass = password_hash($pass, PASSWORD_DEFAULT);
                 // echo $pass;
+			
       
       	  ?>
   
 			
 		  <div class="mb-3">
 		    <label for="exampleInputEmail1" class="form-label">User name</label>
-		    <input type="text" class="form-control" name="user_name">
+		    <input type="text" class="form-control" name="user_name" autocomplete="off">
 		  </div>
 		  <div class="mb-3">
 		    <label for="exampleInputPassword1" class="form-label">Password</label>
-		    <input type="password" class="form-control" name="password" id="exampleInputPassword1">
+		    <input type="password" class="form-control" name="password" id="exampleInputPassword1" autocomplete="off">
 		  </div>
 		  <button type="submit" class="btn btn-primary">Login</button>
 		</form>

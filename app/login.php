@@ -1,17 +1,19 @@
 <?php
 session_start();
-include '../db.php'; // go one folder up to include DB
+include __DIR__ . '/../DB_connection.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $username = $_POST['user_name'];  // 'user_name' comes from form input
+    $username = $_POST['user_name'];
     $password = $_POST['password'];
 
     $stmt = $conn->prepare("SELECT * FROM users WHERE username = ?");
     $stmt->bind_param("s", $username);
     $stmt->execute();
+
+    // ✅ Correct way to get result
     $res = $stmt->get_result();
 
-    if ($res->num_rows === 1) {
+    if ($res && $res->num_rows === 1) {
         $user = $res->fetch_assoc();
 
         if (password_verify($password, $user['password'])) {
@@ -20,18 +22,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['username'] = $user['username'];
 
             if ($user['role'] == 'admin') {
-                header("Location: ../admin.php");
-                exit();
+                header("Location: ../index.php");
             } else {
                 header("Location: ../employee.php");
-                exit();
             }
+            exit();
         } else {
-            header("Location: ../login.html?error=Incorrect+password");
+            header("Location: ../login.php?error=Incorrect+password");
             exit();
         }
     } else {
-        header("Location: ../login.html?error=User+not+found");
+        header("Location: ../login.php?error=User+not+found");
         exit();
     }
 }

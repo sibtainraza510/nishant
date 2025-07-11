@@ -30,10 +30,10 @@ function get_all_tasks_due_today($conn){
 }
 function count_tasks_due_today($conn){
 	$sql = "SELECT id FROM tasks WHERE due_date = CURDATE() AND status != 'completed'";
-	$stmt = $conn->prepare($sql);
-	$stmt->execute([]);
+	// $stmt = $conn->prepare($sql);
+	// $stmt->execute([]);
 
-	return $stmt->rowCount();
+	// return $stmt->rowCount();
 }
 
 function get_all_tasks_overdue($conn){
@@ -49,10 +49,10 @@ function get_all_tasks_overdue($conn){
 }
 function count_tasks_overdue($conn){
 	$sql = "SELECT id FROM tasks WHERE due_date < CURDATE() AND status != 'completed'";
-	$stmt = $conn->prepare($sql);
-	$stmt->execute([]);
+	// $stmt = $conn->prepare($sql);
+	// $stmt->execute([]);
 
-	return $stmt->rowCount();
+	// return $stmt->rowCount();
 }
 
 
@@ -69,10 +69,10 @@ function get_all_tasks_NoDeadline($conn){
 }
 function count_tasks_NoDeadline($conn){
 	$sql = "SELECT id FROM tasks WHERE status != 'completed' AND due_date IS NULL OR due_date = '0000-00-00'";
-	$stmt = $conn->prepare($sql);
-	$stmt->execute([]);
-
-	return $stmt->rowCount();
+	// $stmt = $conn->prepare($sql);
+	// $stmt->execute([]);
+// 
+	// return $stmt->rowCount();
 }
 
 
@@ -100,7 +100,7 @@ function count_tasks($conn){
 	$stmt = $conn->prepare($sql);
 	$stmt->execute([]);
 
-	return $stmt->rowCount();
+	// return $stmt->rowCount();
 }
 
 function update_task($conn, $data){
@@ -135,7 +135,7 @@ function count_pending_tasks($conn){
 	$stmt = $conn->prepare($sql);
 	$stmt->execute([]);
 
-	return $stmt->rowCount();
+	// return $stmt->rowCount();
 }
 
 function count_in_progress_tasks($conn){
@@ -143,7 +143,7 @@ function count_in_progress_tasks($conn){
 	$stmt = $conn->prepare($sql);
 	$stmt->execute([]);
 
-	return $stmt->rowCount();
+	// return $stmt->rowCount();
 }
 
 function count_completed_tasks($conn){
@@ -151,7 +151,7 @@ function count_completed_tasks($conn){
 	$stmt = $conn->prepare($sql);
 	$stmt->execute([]);
 
-	return $stmt->rowCount();
+	// return $stmt->rowCount();
 }
 
 
@@ -160,7 +160,7 @@ function count_my_tasks($conn, $id){
 	$stmt = $conn->prepare($sql);
 	$stmt->execute([$id]);
 
-	return $stmt->rowCount();
+	// return $stmt->rowCount();
 }
 
 function count_my_tasks_overdue($conn, $id){

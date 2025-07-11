@@ -55,5 +55,5 @@ function count_users($conn){
 	$stmt = $conn->prepare($sql);
 	$stmt->execute([]);
 
-	return $stmt->rowCount();
+	// return $stmt->rowCount();
 }

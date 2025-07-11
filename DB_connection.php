@@ -1,14 +1,12 @@
-<?php  
+<?php
+$host = 'localhost';
+$db   = 'task_management_db';
+$user = 'root';
+$pass = '';
 
-$sName = "localhost";
-$uName = "root";
-$pass  = "";
-$db_name = "task_management_db";
+$conn = new mysqli($host, $user, $pass, $db);
 
-try {
-	$conn = new PDO("mysql:host=$sName;dbname=$db_name", $uName, $pass);
-	$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-}catch(PDOExeption $e){
-	echo "Connection failed: ". $e->getMessage();
-	exit;
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
 }
+?>

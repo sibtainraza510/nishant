@@ -117,10 +117,11 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `full_name`, `username`, `password`, `role`, `created_at`) VALUES
-(1, 'Oliver', 'admin', '$2y$10$TnyR1Y43m1EIWpb0MiwE8Ocm6rj0F2KojE3PobVfQDo9HYlAHY/7O', 'admin', '2024-08-28 07:10:04'),
-(2, 'Elias A.', 'elias', '$2y$10$8xpI.hVCVd/GKUzcYTxLUO7ICSqlxX5GstSv7WoOYfXuYOO/SZAZ2', 'employee', '2024-08-28 07:10:40'),
-(7, 'John', 'john', '$2y$10$CiV/f.jO5vIsSi0Fp1Xe7ubWG9v8uKfC.VfzQr/sjb5/gypWNdlBW', 'employee', '2024-08-29 17:11:21'),
-(8, 'Oliver', 'oliver', '$2y$10$E9Xx8UCsFcw44lfXxiq/5OJtloW381YJnu5lkn6q6uzIPdL5yH3PO', 'employee', '2024-08-29 17:11:34');
+(1, 'nishant', 'nishant', '$2y$10$oEEJpGsyRpF/kK8xJ7PCp.BxCi009N0bIRTqRW526idji/s6Ceq7S', 'admin', '2025-07-11 12:06:39');
+(2, 'Oliver', 'admin', '$2y$10$TnyR1Y43m1EIWpb0MiwE8Ocm6rj0F2KojE3PobVfQDo9HYlAHY/7O', 'admin', '2024-08-28 07:10:04'),
+(3, 'Elias A.', 'elias', '$2y$10$8xpI.hVCVd/GKUzcYTxLUO7ICSqlxX5GstSv7WoOYfXuYOO/SZAZ2', 'employee', '2024-08-28 07:10:40'),
+(4, 'John', 'john', '$2y$10$CiV/f.jO5vIsSi0Fp1Xe7ubWG9v8uKfC.VfzQr/sjb5/gypWNdlBW', 'employee', '2024-08-29 17:11:21'),
+(5, 'Oliver', 'oliver', '$2y$10$E9Xx8UCsFcw44lfXxiq/5OJtloW381YJnu5lkn6q6uzIPdL5yH3PO', 'employee', '2024-08-29 17:11:34');
 
 --
 -- Indexes for dumped tables
